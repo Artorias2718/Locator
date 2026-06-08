@@ -14,16 +14,16 @@ public class PersonConfiguration: IEntityTypeConfiguration<Models.Person>
             .IsRequired(true);
         builder.Property(e => e.MiddleName)
             .HasColumnType("nvarchar(100)")
-            .IsRequired(true);
+            .IsRequired(false);
         builder.Property(e => e.LastName)
             .HasColumnType("nvarchar(100)")
             .IsRequired(true);
         builder.Property(e => e.Email)
             .HasColumnType("nvarchar(255)")
-            .IsRequired(true);
+            .IsRequired(false);
         builder.Property(e => e.Phone)
             .HasColumnType("varchar(11)")
-            .IsRequired(true);
+            .IsRequired(false);
         builder.Property(e => e.ImageSrc)
             .HasColumnType("varchar(max)")
             .IsRequired(false);
