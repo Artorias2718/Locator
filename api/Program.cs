@@ -1,4 +1,5 @@
 using api.DbContexts;
+using api.Domain.Image;
 using api.Domain.Person;
 using api.Profiles;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<IPersonDomainGet, PersonDomainGet>();
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IImageDomainGet, ImageDomainGet>();
 
 builder.Services.AddDbContext<SqlServerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
